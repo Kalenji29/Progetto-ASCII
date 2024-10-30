@@ -1,0 +1,35 @@
+import pygame
+print(pygame.ver)
+import pygame
+import sys
+
+# Inizializza Pygame
+pygame.init()
+
+# Definisci le dimensioni della finestra
+width, height = 800, 600
+screen = pygame.display.set_mode((width, height))
+
+# Imposta il titolo della finestra
+pygame.display.set_caption("Finestra Pygame")
+
+# Colore di sfondo
+background_color = (255, 0, 0)  # Nero
+
+# Loop principale
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_ESCAPE]:  # Se si preme il tasto ESC
+        pygame.quit()
+        sys.exit()
+
+    # Riempie lo sfondo
+    screen.fill(background_color)
+
+    # Aggiorna la finestra
+    pygame.display.flip()
